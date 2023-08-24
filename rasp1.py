@@ -27,6 +27,8 @@ for x in nm.all_hosts():
     sleep(4)
     lcd.clear()
 
+lcd.message = "CRISS CHUPALOO XD"
+
 
 #for x in range(0, 16):
 #    lcd.move_right()
