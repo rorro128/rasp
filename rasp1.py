@@ -24,10 +24,12 @@ lcd.clear()
 for x in nm.all_hosts():
     lcd.message = f"IP: {x}\n" + nm[f"{x}"]['addresses']['ipv4']
     #lcd.message = nm['{x}']['addresses']['mac']
-    sleep(4)
+    sleep(3)
     lcd.clear()
+    lcd.message = "CRISS CHUPALO XD"
+    sleep(3)
 
-lcd.message = "CRISS CHUPALOO XD"
+
 
 
 #for x in range(0, 16):
