@@ -27,8 +27,11 @@ for host in nm.all_hosts():
     for proto in nm[host].all_protocols():
         lcd.message = '\nProtocol : %s' % proto
         lport = nm[host][proto].keys()
+        sleep(3)
+        lcd.clear()
         for port in lport:
             lcd.message = '\nport : %s\tstate : %s' % (port, nm[host][proto][port]['state'])
+            sleep(3)
 
 #for x in nm.all_hosts():
 #    lcd.message = f"IP: {x}\n" + nm[f"{x}"]['addresses']['ipv4']
