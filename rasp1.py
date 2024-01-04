@@ -21,13 +21,22 @@ lcd.message = "holaaaa nmap"
 sleep(4)
 
 lcd.clear()
-for x in nm.all_hosts():
-    lcd.message = f"IP: {x}\n" + nm[f"{x}"]['addresses']['ipv4']
+
+for host in nm.all_hosts():
+    lcd.message = f"IP: " + nm[f"{host}"]['addresses']['ipv4']
+    for proto in nm[host].all_protocols():
+        lcd.message = '\nProtocol : %s' % proto
+        lport = nm[host][proto].keys()
+        for port in lport:
+            lcd.message = '\nport : %s\tstate : %s' % (port, nm[host][proto][port]['state'])
+
+#for x in nm.all_hosts():
+#    lcd.message = f"IP: {x}\n" + nm[f"{x}"]['addresses']['ipv4']
     #lcd.message = nm['{x}']['addresses']['mac']
-    sleep(3)
-    lcd.clear()
-    lcd.message = "CRISS CHUPALO XD"
-    sleep(3)
+#    sleep(3)
+#    lcd.clear()
+#    lcd.message = "CRISS CHUPALO XD"
+#    sleep(3)
 
 
 
